@@ -1,6 +1,6 @@
 ﻿namespace Tap.Solid.Lsp
 {
-    internal class LatestSamsung : MobilePhone
+    internal class LatestSamsung : SmartPhone
     {
         internal override void BrowseWeb(string webAdress)
         {

@@ -1,6 +1,6 @@
 ﻿namespace Tap.Solid.Ocp
 {
-    public class BankAccount
+    public abstract class BankAccount
     {
         public decimal AccountBalance { get; private set; }
         public AccountType AccountType { get; private set; }
@@ -10,8 +10,9 @@
             AccountBalance = initialBalance;
             AccountType = accountType;
         }
+         public abstract void ExtractMoney(decimal value);
 
-        public void ExtractMoney(decimal value)
+ /*       public void ExtractMoney(decimal value)
         {
             var commision = 0m;
 
@@ -27,5 +28,5 @@
 
             AccountBalance = AccountBalance - (value + commision);
         }
-    }
+   */ }
 }
