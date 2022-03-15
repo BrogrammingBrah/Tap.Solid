@@ -12,21 +12,41 @@
         }
          public abstract void ExtractMoney(decimal value);
 
- /*       public void ExtractMoney(decimal value)
+        /*       public void ExtractMoney(decimal value)
+               {
+                   var commision = 0m;
+
+                   if(AccountType == AccountType.Regular)
+                   {
+                       commision = value * 0.02m;
+                   }
+
+                   if (AccountType == AccountType.Gold)
+                   {
+                       commision = value * 0.01m;
+                   }
+
+                   AccountBalance = AccountBalance - (value + commision);
+               }
+          */
+
+        public interface IBankAccount
         {
-            var commision = 0m;
-
-            if(AccountType == AccountType.Regular)
-            {
-                commision = value * 0.02m;
-            }
-
-            if (AccountType == AccountType.Gold)
-            {
-                commision = value * 0.01m;
-            }
-
-            AccountBalance = AccountBalance - (value + commision);
+            BankAccount ExtractMoney(decimal value);
         }
-   */ }
+
+        public class RegularAccount:IBankAccount
+        {
+                BankAccount IBankAccount.ExtractMoney(decimal value)
+                {
+                    var commision = 0m;
+                    commision = value * 0.02m;
+                    AccountBalance = AccountBalance - (value + commision);
+                }
+            
+        }
+        
+
+
+    }
 }

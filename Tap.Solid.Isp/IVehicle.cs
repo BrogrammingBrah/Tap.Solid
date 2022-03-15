@@ -1,10 +1,15 @@
 ﻿namespace Tap.Solid.Isp
 {
-    internal interface IVehicle
+    internal interface ISteeringVehicle
     {
         public void MoveForward();
         public void MoveBackwards();
-        public void SteerLeft();
-        public void SteerRight();
+       
+    }
+
+    internal interface IMovingVehicle
+    {
+        public void MoveForward();
+        public void MoveBackwards();
     }
 }

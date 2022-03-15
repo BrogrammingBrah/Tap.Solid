@@ -1,6 +1,6 @@
 ﻿namespace Tap.Solid.Isp
 {
-    internal class Train : IVehicle
+    internal class Train : IMovingVehicle
     {
         public void MoveBackwards()
         {
@@ -12,14 +12,5 @@
             //Move Forward
         }
 
-        public void SteerLeft()
-        {
-
-        }
-
-        public void SteerRight()
-        {
-
-        }
     }
 }
